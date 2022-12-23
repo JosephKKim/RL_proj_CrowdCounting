@@ -54,9 +54,7 @@ python train.py
 python train_duel.py
 ```
 
-
-
-TODO: Change the weights and specify the model
+Pretrained Weights are in [WEIGHTS](https://drive.google.com/drive/folders/1nCZoNiOPITRM6nV7ZdW1o3bblG-eeN_M?usp=sharing)
 
 ##  For evaluation command
 
