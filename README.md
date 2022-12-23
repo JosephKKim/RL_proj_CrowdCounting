@@ -17,6 +17,18 @@ $./trained_model/
 
 For reproducing the result, 
 
+** For Training ddqn model command**
+```python
+python train.py
+```
+
+** For Training dueling dqn model command**
+```python
+python train_duel.py
+```
+
+
+
 TODO: Change the weights and specify the model
 
 ** For evaluation command**
