@@ -58,7 +58,13 @@ python train_duel.py
 
 TODO: Change the weights and specify the model
 
-** For evaluation command**
+##  For evaluation command
+
 ```python
 python Test_SHT_A.py
 ```
+
+in Test_SHT_A.py, you can choose between LibraNet (DDQN) or LibraNet_duel(Duel DQN) in line 33/34.
+change the file name of the pretrained weigths in line 35.
+
+(Sorry most of the codes are hard coded)
