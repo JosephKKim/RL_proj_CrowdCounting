@@ -2,7 +2,7 @@
 
 This is RL project repository for Reinforcement Learning class 2022.
 
-This repository is based on [Paper Official Github][https://www.example.com](https://github.com/poppinace/libranet)
+This repository is based on [Paper Official Github](https://github.com/poppinace/libranet)
 
 For preparing data please refer the Paper Official Github.
 
