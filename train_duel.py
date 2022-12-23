@@ -14,7 +14,7 @@ from pathlib import Path
 # =============================================================================
 # creatived package
 # =============================================================================
-from model import LibraNet, weights_normal_init, LibraNet_duel, LibraNet_duel_simple
+from model import LibraNet, weights_normal_init, LibraNet_duel
 from buffer import ReplayBuffer
 # from train_test import train_model,test_model
 from train_test_duel import train_duel, test_model
@@ -52,7 +52,7 @@ test_path ='data/Test/'
 # Learning rate
 # =============================================================================
 # initialize epoch here
-lr = 0.00005
+lr = 0.00001
 learning_rate = lr * np.ones(100)
 all_epoches = len(learning_rate)
 # =============================================================================
@@ -107,7 +107,7 @@ for epoch in range(epoch_last, all_epoches):
             'mae':mae,
             'mse':mse
         }
-        torch.save(state_best, 'Duel_DQN_model_best_{}_err.pth.tar'.format(lr))
+        torch.save(state_best, 'Duel_DQN_model_best_{}.pth.tar'.format(lr))
                 
     state_ckpt = {
                 'state_dict':net.state_dict(),
@@ -116,11 +116,11 @@ for epoch in range(epoch_last, all_epoches):
                 'mse':mse
             }
     
-    torch.save(state_ckpt, 'Duel_DQN_model_ckpt_{}_err.pth.tar'.format(lr))
+    torch.save(state_ckpt, 'Duel_DQN_model_ckpt_{}.pth.tar'.format(lr))
         
     print('mae=%.3f,mse=%.3f\n'%(mae, mse))
     
-    f = open("result_duel_{}_err.txt".format(lr), 'a') 
+    f = open("result_duel_{}.txt".format(lr), 'a') 
     f.write('EPOCH:%d, mae=%.4f,mse=%.4f\n'%(epoch, mae, mse))
     f.close()
     

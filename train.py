@@ -32,7 +32,7 @@ except AttributeError:
 # =============================================================================   
 parameters = {'TRAIN_SKIP':100,
              'BUFFER_LENGTH':10000,
-             'ERROR_RANGE':0.7,
+             'ERROR_RANGE':0.5,
              'GAMMA':0.9,
              'batch_size':128,
              'Interval_N':57,
@@ -52,8 +52,8 @@ test_path ='data/Test/'
 # =============================================================================
 # initialize epoch here
 # learning_rate = 0.00001 * np.ones(100)
-# DDQN은 learning rate 감소시키고, Epoch을 늘려보았음 (너무 빨리 수렴)
-learning_rate = 0.0001 * np.ones(200)
+
+learning_rate = 0.00001 * np.ones(200)
 all_epoches = len(learning_rate)
 # =============================================================================
 # Initialization 
@@ -107,7 +107,7 @@ for epoch in range(epoch_last, all_epoches):
             'mae':mae,
             'mse':mse
         }
-        torch.save(state_best, 'last.pth.tar')
+        torch.save(state_best, 'train.pth.tar')
                 
     state_ckpt = {
                 'state_dict':net.state_dict(),
@@ -116,11 +116,11 @@ for epoch in range(epoch_last, all_epoches):
                 'mse':mse
             }
     
-    torch.save(state_ckpt, 'last.pth.tar')
+    torch.save(state_ckpt, 'train.pth.tar')
         
     print('mae=%.3f,mse=%.3f\n'%(mae, mse))
     
-    f = open("last.txt", 'a') 
+    f = open("train.txt", 'a') 
     f.write('EPOCH:%d, mae=%.4f,mse=%.4f\n'%(epoch, mae, mse))
     f.close()
     
