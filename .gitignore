@@ -1,0 +1,9 @@
+*.tar
+*.pth.tar
+*.png
+*.txt
+*.mat
+*.jpg
+*.csv
+*.pyc
+.vscode/
